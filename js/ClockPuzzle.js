@@ -1,5 +1,26 @@
 console.log("ClockPuzzle.js loading...");
 
+
+//todo
+var game = {
+    "hourSpots":{
+        "ID00":{
+            "locked":false,
+            "clicked":false,
+            "value":2
+        },
+        "ID01":{
+            "locked":false,
+            "clicked":false,
+            "value":3
+        }
+    },
+    "leftHand": -1,
+    "rightHand": -1,
+    "clicks": 0
+}
+
+
 const puzzleSize = 8;
 var clockArray = [3, 2, 4, 3, 2, 1, 4, 3];
 var clockLock = [];
