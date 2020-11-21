@@ -1,6 +1,57 @@
+body{
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
 h1{
     color: red;
 }
 h3{
     color: black;
+}
+
+.main_container{
+    width: 100vw;
+    height: max-content;
+    display: grid;
+
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 80px 80px;
+}
+.red{
+    background-color: red;
+}
+.yellow{
+    background-color: yellow;
+}
+.blue{
+    background-color: blue;
+}
+.green{
+    background-color: green;
+}
+.pink{
+    background-color: pink;
+}
+.locked{
+    background-color: grey;
+}
+
+.hourSpot{
+
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hourSpot > a {
+    font-size: 26px;
+    pointer-events: none;
 }
