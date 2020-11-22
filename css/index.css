@@ -19,6 +19,40 @@ h3{
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: 80px 80px;
 }
+
+.clock_hand_position_0{
+    grid-column: 1;
+    grid-row: 2;
+}
+.clock_hand_position_1{
+    grid-column: 2;
+    grid-row: 2;
+}
+.clock_hand_position_2{
+    grid-column: 3;
+    grid-row: 2;
+}
+.clock_hand_position_3{
+    grid-column: 4;
+    grid-row: 2;
+}
+.clock_hand_position_4{
+    grid-column: 5;
+    grid-row: 2;
+}
+.clock_hand_position_5{
+    grid-column: 6;
+    grid-row: 2;
+}
+.clock_hand_position_6{
+    grid-column: 7;
+    grid-row: 2;
+}
+.clock_hand_position_7{
+    grid-column: 8;
+    grid-row: 2;
+}
+
 .red{
     background-color: red;
 }
