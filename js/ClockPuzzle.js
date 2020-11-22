@@ -5,23 +5,8 @@ const puzzleSize = 8;
 
 let clockArray = [3, 3, 2, 4, 3, 1, 2, 3];
 
-//todo
 let game = {
-    "hourSpots":{
-        "ID00":{
-            "order":0,
-            "locked":false,
-            "clicked":false,
-            "value":3,
-            "element":null
-        },
-        "ID01":{
-            "order":1,
-            "locked":false,
-            "clicked":false,
-            "value":2
-        }
-    },
+    "hourSpots":{},
     "hourCount": 8,
     "leftHand": -1,
     "rightHand": -1,
@@ -29,17 +14,20 @@ let game = {
 }
 
 clockArray.forEach(function (item, index) {
-    // console.log(index, item);
-
     let hourSpot = document.createElement("div");
-    hourSpot.className = "hourSpot " + clockColor[item - 1];
-    hourSpot.id = "ID0" + index;
-    let hourSpotText = document.createElement("a");
 
-    hourSpotText.innerText = item.toString();
-    hourSpot.appendChild(hourSpotText);
+    // el.setAttribute('class', `number number${i}`);
+    hourSpot.className = "hourSpot";
+    //hourSpot.id = "ID0" + index;
+    let hourSpotItems = document.createElement("div");
+    hourSpotItems.className = "hour_circle";
+    hourSpotItems.innerText = item.toString();
+    hourSpot.appendChild(hourSpotItems);
 
-    document.getElementById("main_container").appendChild(hourSpot);
+    hourSpot.style.transform = `rotate(${index*(360 / game.hourCount)}deg)`;
+
+
+    document.getElementsByClassName("clock_positions")[0].appendChild(hourSpot);
     game.hourSpots[hourSpot.id] = {
         "order" : index,
         "locked" : false,
@@ -52,13 +40,10 @@ clockArray.forEach(function (item, index) {
 
 // console.log(game.hourSpots);
 
-let leftHandle = document.createElement("div");
-let rightHandle = document.createElement("div");
+let leftHandle = document.getElementById("left_hand");
+let rightHandle = document.createElement("right_hand");
 leftHandle.style.visibility = "hidden";
 rightHandle.style.visibility = "hidden";
-document.getElementById("main_container").appendChild(leftHandle);
-document.getElementById("main_container").appendChild(rightHandle);
-
 
 let items = document.getElementsByClassName("hourSpot");
 for (let i = 0; i < items.length; i++){
@@ -112,3 +97,17 @@ function lockHourSpots() {
         game.hourSpots[x].locked = true;
     }
 }
+/*
+let drawTicks = function() {
+
+    for (let i = 1; i < 13; i++) {
+
+        let el = document.createElement('div');
+        el.setAttribute('class', `number number${i}`);
+        el.style.transform = `rotate(${i*30}deg)`;
+
+        document.querySelector('.clock_positions').appendChild(el);
+
+    }
+
+}; drawTicks()*/

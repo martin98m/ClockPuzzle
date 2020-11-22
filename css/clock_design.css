@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.clock_container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 400px;
+    height: 400px;
+    background: #eee;
+    border-radius: 50%;
+    padding: 20px;
+    border: 20px solid #d9d9d9;
+}
+
+.clock_positions {
+    position: relative;
+}
+
+.hourSpot {
+    width: 15px;
+    /*background: linear-gradient( to top, #eee 0%, #eee 80%, black 80%, black 100%);*/
+    position: absolute;
+    height: 200px;
+    font-size: 28px;
+    border: 1px solid red;
+    transform-origin: bottom;
+}
+
+.hour_circle{
+    border: 1px solid red;
+}
+
+.red{
+    background-color: red;
+}
+.yellow{
+    background-color: yellow;
+}
+.blue{
+    background-color: blue;
+}
+.green{
+    background-color: green;
+}
+.pink{
+    background-color: pink;
+}
+.locked{
+    background-color: grey;
+}

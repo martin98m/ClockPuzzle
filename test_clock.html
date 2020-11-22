@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Help</title>
+</head>
+<body>
+<div class="watch">
+    <div class="face">
+        <div class="numbers"></div>
+        <div class="hands">
+<!--            <div class="hand hand-hour"></div>-->
+<!--            <div class="hand hand-minute"></div>-->
+<!--            <div class="hand hand-second">-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /* Main style for the clock */
+
+    .face {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 400px;
+        height: 400px;
+        background: #eee;
+        border-radius: 50%;
+        padding: 20px;
+        border: 20px solid #d9d9d9;
+    }
+
+    .face:after {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        border-radius: 50%;
+        z-index: 3;
+    }
+
+
+    /* Numbers: styling and positioning */
+
+    .numbers {
+        position: relative;
+    }
+
+    .number {
+        width: 15px;
+        /*background: linear-gradient( to top, #eee 0%, #eee 80%, black 80%, black 100%);*/
+        position: absolute;
+        height: 200px;
+        font-size: 28px;
+        border: 1px solid red;
+        transform-origin: bottom;
+    }
+
+    /* Clock hands styling */
+
+    .hands {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+
+    .hand {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 120px;
+        width: 10px;
+        content: "";
+        background: black;
+        transform: translate(-50%, -100%);
+        border-radius: 0 0 20px 20px;
+        transform-origin: 50% 100%;
+        z-index: 4;
+        animation: count 3600s linear infinite;
+    }
+
+    .hand:before {
+        display: block;
+        position: absolute;
+        top: -50px;
+        width: 0;
+        height: 0;
+        border: 10px solid transparent;
+        border-width: 10px 5px 41px;
+        border-bottom-color: black;
+        content: "";
+    }
+
+    .hand.hand-hour {
+        height: 70px;
+        transform: translate(-50%, -100%) rotate(30deg);
+        animation: count 43200s linear infinite;
+    }
+
+    .hand.hand-second {
+        height: 130px;
+        width: 8px;
+        transform: translate(-50%, -100%) rotate(60deg);
+        z-index: 3;
+        background: red;
+        animation: count 60s linear infinite;
+    }
+
+    .hand.hand-second:before {
+        border-width: 10px 4px 41px;
+        border-bottom-color: red;
+        z-index: -1;
+    }
+
+
+    /* animation of the clock hands */
+
+    @keyframes count {
+        0%,
+        100% {
+            transform: translate(-50%, -100%);
+        }
+        25% {
+            transform: translate(-50%, -100%) rotate(90deg);
+        }
+        50% {
+            transform: translate(-50%, -100%) rotate(180deg);
+        }
+        75% {
+            transform: translate(-50%, -100%) rotate(270deg);
+        }
+    }
+</style>
+<script>
+    const clockColor = ["red", "yellow", "blue", "green", "purple", "pink"];
+    const puzzleSize = 8;
+    let clockArray = [3, 3, 2, 4, 3, 1, 2, 3];
+
+
+    let drawTicks = function() {
+
+        clockArray.forEach(function (item, index) {
+
+            let hourSpot = document.createElement("div");
+
+            // el.setAttribute('class', `number number${i}`);
+            hourSpot.className = "number " + clockColor[item - 1];
+            hourSpot.id = "ID0" + index;
+            let hourSpotText = document.createElement("a");
+            hourSpotText.innerText = item.toString();
+            hourSpot.appendChild(hourSpotText);
+
+            // el.style.transform = `rotate(${i*30}deg)`;
+            hourSpot.style.transform = 'rotate(${index*45}deg)'
+
+            hourSpot.setAttribute('class', `number number${index}`);
+            hourSpot.style.transform = `rotate(${index*45}deg)`;
+
+            document.querySelector('.numbers').appendChild(hourSpot);
+
+        })
+
+    }; drawTicks()
+</script>
+</body>
+</html>
