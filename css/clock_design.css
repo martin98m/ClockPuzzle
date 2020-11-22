@@ -17,8 +17,15 @@ body{
     border: 20px solid #d9d9d9;
 }
 
-.clock_positions {
+#left_hand{
+}
+#right_hand{
+}
+
+.clock_positions{
     position: relative;
+}
+.clock_hands{
 }
 
 .hourSpot {
