@@ -17,15 +17,29 @@ body{
     border: 20px solid #d9d9d9;
 }
 
-#left_hand{
+.right_handle{
+    background: blue;
+    height: 100px;
+    width: 10px;
 }
-#right_hand{
+.left_handle{
+    background: red;
+    height: 100px;
+    width: 10px;
 }
 
-.clock_positions{
-    position: relative;
+.clock_hand{
+    position: absolute;
+    height: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    transform-origin: bottom;
 }
-.clock_hands{
+.clock_hand_left{
+    animation: leftHandlePositions;
 }
 
 .hourSpot {
