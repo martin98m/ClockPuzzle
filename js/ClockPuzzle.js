@@ -71,7 +71,7 @@ for (let i = 0; i < items.length; i++){
         let leftHandlePosition = moveLeft(num, hourSpot.value, game.hourCount);
         let rightHandlePosition = moveRight(num, hourSpot.value, game.hourCount);
 
-        console.log("NUM",num, " |newLeft:", leftHandlePosition," |newRight:", rightHandlePosition);
+        // console.log("NUM",num, " |newLeft:", leftHandlePosition," |newRight:", rightHandlePosition);
         let resultLeft;
 
         if (num > leftHandlePosition){
@@ -82,15 +82,15 @@ for (let i = 0; i < items.length; i++){
             resultLeft = `rotate(${-360 + leftHandlePosition*(360 / game.hourCount)}deg)`;
         }
 
-        console.log(leftHandle.style.transform);
-        console.log(resultLeft);
+        // console.log(leftHandle.style.transform);
+        // console.log(resultLeft);
 
         leftHandle.animate([
             { transform: leftHandle.style.transform },
             { transform: resultLeft }
         ], {
             // timing options
-            duration: 5000
+            duration: 1000
         });
         leftHandle.style.transform = resultLeft;
 
@@ -101,15 +101,15 @@ for (let i = 0; i < items.length; i++){
             resultRight = `rotate(${360 + rightHandlePosition*(360 / game.hourCount)}deg)`;
         }
 
-        console.log(rightHandle.style.transform);
-        console.log(resultRight);
+        // console.log(rightHandle.style.transform);
+        // console.log(resultRight);
 
         rightHandle.animate([
             { transform: rightHandle.style.transform },
             { transform: resultRight }
         ], {
             // timing options
-            duration: 5000
+            duration: 1000
         });
         rightHandle.style.transform = resultRight;
 
@@ -141,9 +141,54 @@ function moveRight(start, value, maxSize){
 }
 
 function lockHourSpots() {
-    console.log(game.hourSpots);
+    // console.log(game.hourSpots);
     for ( const x in game.hourSpots){
         game.hourSpots[x].locked = true;
         game.hourSpots[x].element.style.background = 'white';
     }
 }
+
+//DFS PUZZLE SOLVER
+
+
+let graph = {};
+clockArray.forEach(function (item, index) {
+    // console.log( item, index);
+   let left = moveLeft(index,item,game.hourCount);
+   let right = moveRight(index, item, game.hourCount);
+   if (left === right){
+       graph[index] = [left];
+   } else {
+       graph[index] = [left, right];
+   }
+});
+//console.log("GRAPH");
+//console.log(graph);
+
+function dfs(graph, start, visit){
+
+    let visited = [...visit];
+    visited.push(start);
+
+    // console.log(visited);
+    if(visited.length === game.hourCount ){
+        console.log("STOP");
+        console.log(visited);
+        //return;
+    }
+    let nexG = [...graph[start]];
+
+    visited.forEach(x => {
+        let index = nexG.indexOf(x);
+        if (index !== -1)
+            nexG.splice(index, 1);
+    })
+
+    nexG.forEach(x => {
+        dfs(graph, x, visited);
+    });
+
+    //return visited;
+}
+
+//dfs(graph, 2, []);
