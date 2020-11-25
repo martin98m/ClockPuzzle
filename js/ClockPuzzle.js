@@ -15,15 +15,16 @@ let game = {
 function newGame(size){
 
     for (let a = 0; a < size; a++) clockArray[a]=0;
-    console.log(clockArray);
+    // console.log(clockArray);
     game.hourCount = size;
+    game.clicks = 0;
     let newTest = Array.from(Array(size).keys());
-    console.log(newTest);
+    // console.log(newTest);
 
     let start = Math.floor(Math.random() * Math.floor(newTest.length));//INDEX
 
-    console.log(start);
-    console.log("-------------");
+    // console.log(start);
+    // console.log("-------------");
 
     let o;
     let x = 1;
@@ -34,20 +35,20 @@ function newGame(size){
         if (index !== -1) {
             newTest.splice(index, 1);
         }
-        console.log(newTest);
-        console.log("A:" + o);
+        // console.log(newTest);
+        // console.log("A:" + o);
 
         let target = Math.floor(Math.random() * Math.floor(newTest.length));//INDEX
-        console.log("B:" + newTest[target]);
+        // console.log("B:" + newTest[target]);
 
         let distanceA = distance(o, newTest[target], size);//VALUE
-        console.log(distanceA);
+        // console.log(distanceA);
 
         clockArray[o] = distanceA;
         start = target;
 
-        console.log(clockArray);
-        console.log("---------");
+        // console.log(clockArray);
+        // console.log("---------");
         x++;
         if (x === size) o = newTest[target];
     }
@@ -108,7 +109,13 @@ function gameSetUp() {
             hourSpot.clicked = true;
             hourSpot.element.style.opacity = "40%";
             game.clicks = game.clicks + 1;
-            if (game.clicks === game.hourCount) alert("Game WON!!!");
+            if (game.clicks === game.hourCount) {
+                alert("Game WON!!!");
+                pauseStopwatch();
+                leftHandle.style.visibility = "hidden";
+                rightHandle.style.visibility = "hidden";
+                return;
+            }
 
 
             lockHourSpots();

@@ -4,30 +4,49 @@
     <meta charset="UTF-8">
     <title>Clock Puzzle</title>
 
-    <!--<link rel="stylesheet" href="css/index.css">-->
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/clock_design.css">
+    <link rel="stylesheet" href="css/grid_template.css">
 </head>
 <body>
 
-<div id="main_container" class="clock_container">
-    <div id="left_hand" class="clock_hand clock_hand_left">
-        <div class="left_handle"></div>
+<div class="grid_main_container">
+    <div class="grid_main_left">
+        <div class="grid_clock">
+            <div id="main_container" class="clock_container">
+                <div id="left_hand" class="clock_hand clock_hand_left">
+                    <div class="left_handle"></div>
+                </div>
+                <div id="right_hand" class="clock_hand">
+                    <div class="right_handle"></div>
+                </div>
+            </div>
+        </div>
+        <div class="grid_timer">
+            <div id="stopwatch">
+                <a>Stopwatch:</a><br>
+                <a id="stopwatch_time">00:00:000</a>
+            </div>
+        </div>
+        <div class="grid_clicks"></div>
     </div>
-    <div id="right_hand" class="clock_hand">
-        <div class="right_handle"></div>
+    <div class="grid_main_right">
+        <div class="grid_title">CLOCK PUZZLE</div>
+        <div class="grid_difficulty">
+            <label for="gameSizeId">HOURS:</label>
+            <input type="number" placeholder="8" id="gameSizeId" value="8" min="3">
+        </div>
+        <div class="grid_control">
+            <button onclick="startNewGame()">START</button>
+        </div>
+        <div class="grid_extra">
+            <div>
+                <button onclick="startStopwatch()">START</button>
+                <button onclick="pauseStopwatch()">PAUSE</button>
+                <button onclick="stopStopwatch()">STOP</button>
+            </div>
+        </div>
     </div>
-</div>
-<label for="gameSizeId">HOURS:</label>
-<input type="number" placeholder="8" id="gameSizeId" value="8" min="3">
-<button onclick="startNewGame()">START</button>
-<div id="stopwatch">
-    <a>Stopwatch:</a><br>
-    <a id="stopwatch_time">00:00:000</a>
-</div>
-<div>
-    <button onclick="startStopwatch()">START</button>
-    <button onclick="pauseStopwatch()">PAUSE</button>
-    <button onclick="stopStopwatch()">STOP</button>
 </div>
 
 <script src="js/index.js"></script>

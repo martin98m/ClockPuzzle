@@ -47,6 +47,7 @@ function startStopwatch() {
 
 function stopStopwatch() {
     clearInterval(timerIntervalObject);
+    timerIntervalObject = null;
     elapsedTime = 0;
     stopwatchTimeElement.innerText = "00:00:000";
     console.log("STOPPED");

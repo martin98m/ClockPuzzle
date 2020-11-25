@@ -1,0 +1,78 @@
+.grid_main_container{
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+
+    /*justify-items: stretch;*/
+    /*align-items: stretch;*/
+}
+
+.grid_main_left{
+    grid-column: 1;
+    grid-row: 1;
+
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 4fr 1fr;
+
+    /*border: 1px solid blue;*/
+}
+.grid_main_right{
+    grid-column: 2;
+    grid-row: 1;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr 4fr;
+
+    /*border: 1px solid red;*/
+}
+
+.grid_clock{
+    grid-column: 1/3;
+    grid-row: 1;
+
+    width: 100%;
+    height: 100%;
+    /*border: 1px solid red;*/
+}
+
+.grid_timer{
+    grid-column: 1;
+    grid-row: 2;
+
+    /*border: 1px solid red;*/
+}
+.grid_clicks{
+    grid-column: 2;
+    grid-row: 2;
+
+    /*border: 1px solid red;*/
+}
+/*RIGHT SIDE*/
+.grid_title{
+    grid-column: 1/4;
+    grid-row: 1;
+
+    /*border: 1px solid blue;*/
+}
+.grid_difficulty{
+    grid-column: 1/4;
+    grid-row: 2;
+
+    /*border: 1px solid blue;*/
+}
+.grid_control{
+    grid-column: 1/4;
+    grid-row: 3;
+
+    /*border: 1px solid blue;*/
+}
+.grid_extra{
+    grid-column: 1/4;
+    grid-row: 4;
+
+    /*border: 1px solid blue;*/
+}
