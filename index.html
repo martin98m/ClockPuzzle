@@ -17,10 +17,21 @@
         <div class="right_handle"></div>
     </div>
 </div>
+<label for="gameSizeId">HOURS:</label>
 <input type="number" placeholder="8" id="gameSizeId" value="8" min="3">
 <button onclick="startNewGame()">START</button>
+<div id="stopwatch">
+    <a>Stopwatch:</a><br>
+    <a id="stopwatch_time">00:00:000</a>
+</div>
+<div>
+    <button onclick="startStopwatch()">START</button>
+    <button onclick="pauseStopwatch()">PAUSE</button>
+    <button onclick="stopStopwatch()">STOP</button>
+</div>
 
 <script src="js/index.js"></script>
 <script src="js/ClockPuzzle.js"></script>
+<script src="js/Stopwatch.js"></script>
 </body>
 </html>
