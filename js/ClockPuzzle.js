@@ -68,8 +68,8 @@ function newGame(size){
 
 let leftHandle = document.getElementById("left_hand");
 let rightHandle = document.getElementById("right_hand");
-leftHandle.style.visibility = "hidden";
-rightHandle.style.visibility = "hidden";
+// leftHandle.style.visibility = "hidden";
+// rightHandle.style.visibility = "hidden";
 
 
 function gameSetUp() {
@@ -102,6 +102,7 @@ function gameSetUp() {
     let items = document.getElementsByClassName("hour_circle");
     for (let i = 0; i < items.length; i++){
         items[i].addEventListener("click", function (x) {
+            console.log("Click");
             let hourSpot = game.hourSpots[x.target.id.toString()];
 
             if (hourSpot.clicked || hourSpot.locked) {
@@ -112,6 +113,7 @@ function gameSetUp() {
             hourSpot.clicked = true;
             hourSpot.element.style.opacity = "40%";
             game.clicks = game.clicks + 1;
+            //GAME WON
             if (game.clicks === game.hourCount) {
                 alert("Game WON!!!");
                 pauseStopwatch();
@@ -181,15 +183,13 @@ function gameSetUp() {
             let spotRight = game.hourSpots["ID0" + rightHandlePosition.toString()]
             if (spotLeft.clicked === false) {
                 spotLeft.locked = false;
-                spotLeft.element.style.background = 'red';
+                // spotLeft.element.style.background = 'red';
             }
             if (spotRight.clicked === false){
                 spotRight.locked = false;
-                spotRight.element.style.background = 'blue';
+                // spotRight.element.style.background = 'blue';
                 rightHandle.style.transform = `rotate(${rightHandlePosition*(360 / game.hourCount)}deg)`
             }
-            if (spotLeft === spotRight)
-                spotRight.element.style.background = 'green';
         })
     }
 }
@@ -221,7 +221,7 @@ function lockHourSpots() {
     // console.log(game.hourSpots);
     for ( const x in game.hourSpots){
         game.hourSpots[x].locked = true;
-        game.hourSpots[x].element.style.background = 'white';
+        // game.hourSpots[x].element.style.background = 'white';
     }
 }
 

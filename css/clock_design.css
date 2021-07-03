@@ -20,13 +20,15 @@ body{
 
 .right_handle{
     background: blue;
-    height: 100px;
+    height: 75%;
     width: 10px;
+    border-radius: 100%;
 }
 .left_handle{
     background: red;
-    height: 100px;
+    height: 75%;
     width: 10px;
+    border-radius: 100%;
 }
 
 .clock_hand{
@@ -44,7 +46,7 @@ body{
 }
 
 .hourSpot {
-    width: 150px;
+    width: 50px;
     /*background: linear-gradient( to top, #eee 0%, #eee 80%, black 80%, black 100%);*/
     position: absolute;
     height: 40%;
@@ -71,24 +73,3 @@ body{
     /*border-radius: 25px;*/
 }
 
-.red{
-    background-color: lightcoral;
-}
-.yellow{
-    background-color: lightyellow;
-}
-.blue{
-    background-color: lightblue;
-}
-.green{
-    background-color: lightgreen;
-}
-.purple{
-    background-color: mediumpurple;
-}
-.pink{
-    background-color: lightpink;
-}
-.locked{
-    background-color: grey;
-}

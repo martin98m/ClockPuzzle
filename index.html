@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/clock_design.css">
     <link rel="stylesheet" href="css/grid_template.css">
+    <link rel="stylesheet" href="css/color.css">
 </head>
 <body>
 
@@ -14,10 +15,10 @@
     <div class="grid_main_left">
         <div class="grid_clock">
             <div id="main_container" class="clock_container">
-                <div id="left_hand" class="clock_hand clock_hand_left">
+                <div id="left_hand" class="clock_hand clock_hand_left" style="visibility: hidden">
                     <div class="left_handle"></div>
                 </div>
-                <div id="right_hand" class="clock_hand">
+                <div id="right_hand" class="clock_hand" style="visibility: hidden">
                     <div class="right_handle"></div>
                 </div>
             </div>
@@ -32,7 +33,7 @@
         </div>
         <div class="grid_difficulty">
             <label for="gameSizeId">HOURS:</label>
-            <input type="number" placeholder="8" id="gameSizeId" value="8" min="3">
+            <input type="number" placeholder="8" id="gameSizeId" value="8" min="3" max="24">
         </div>
         <div class="grid_control">
             <button onclick="startNewGame()">PLAY</button>
