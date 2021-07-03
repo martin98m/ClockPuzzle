@@ -14,9 +14,17 @@ let game = {
 
 function newGame(size){
 
+    clockArray = [];
     for (let a = 0; a < size; a++) clockArray[a]=0;
     // console.log(clockArray);
-    game.hourCount = size;
+
+    game = {
+        "hourSpots":{},
+        "hourCount": size,
+        "leftHand": -1,
+        "rightHand": -1,
+        "clicks": 0
+    }
 
     let newTest = Array.from(Array(size).keys());
     // console.log(newTest);
