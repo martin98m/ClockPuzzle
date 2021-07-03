@@ -26,7 +26,7 @@ function timeToString(time) {
     let formatedMS = ml.toString().padStart(3, "0");
 
     // console.log(mm,ss,ml);
-    // console.log(formatedMM,formatedSS,formatedMS);
+    console.log(formatedMM,formatedSS,formatedMS);
 
     return `${formatedMM}:${formatedSS}:${formatedMS}`;
 }

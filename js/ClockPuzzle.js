@@ -125,7 +125,7 @@ function gameSetUp() {
             game.clicks = game.clicks + 1;
             //GAME WON
             if (game.clicks === game.hourCount) {
-                alert("Game WON!!!");
+                alert("Game WON!!!\nYour time is: " + timeToString(elapsedTime));
                 pauseStopwatch();
                 leftHandle.style.visibility = "hidden";
                 rightHandle.style.visibility = "hidden";
@@ -263,7 +263,12 @@ function dfs(graph, start, visit){
     // console.log(visited);
     if(visited.length === game.hourCount ){
         console.log("STOP");
-        console.log(visited);
+        let text = document.getElementById("dfs_solver").value;
+        console.log(text);
+        if (text)
+            document.getElementById("dfs_solver").value = text + "\n" + visited;
+        else
+            document.getElementById("dfs_solver").value = visited;
     }
 
     let nexG = [...graph[start]];
@@ -282,7 +287,7 @@ function dfs(graph, start, visit){
 function goDFS() {
     dfsSetUp();
     clockArray.forEach(function (item, index) {
-        console.log(item,index);
+        // console.log(item,index);
       dfs(graph,index,[])
     });
 }

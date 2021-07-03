@@ -6,6 +6,8 @@ function startNewGame(){
     document.getElementById("left_hand").style.visibility = "hidden";
     document.getElementById("right_hand").style.visibility = "hidden";
 
+    document.getElementById("dfs_solver").value = null;
+
     console.log("NEW GAME STARTING");
     let val = document.getElementById("gameSizeId");
     console.log(val.value);
@@ -27,6 +29,8 @@ function startNewGame(){
 function restartGame(){
     document.getElementById("left_hand").style.visibility = "hidden";
     document.getElementById("right_hand").style.visibility = "hidden";
+
+    document.getElementById("dfs_solver").value = null;
 
     console.log("GAME RESTARTING");
 
