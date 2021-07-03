@@ -2,7 +2,7 @@ console.log("Loading stopwatch ...");
 
 let startTime = 0;
 let elapsedTime = 0;
-let stopwatchInterval = 100;
+let stopwatchInterval = 10;
 let timerIntervalObject = null;
 
 let stopwatchTimeElement = document.getElementById("stopwatch_time");
@@ -33,6 +33,7 @@ function timeToString(time) {
 
 function startStopwatch() {
 
+    // return;
     if (timerIntervalObject) return;
     startTime = new Date() - elapsedTime;
 

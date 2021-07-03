@@ -16,3 +16,9 @@ function startNewGame(){
     startStopwatch();
     dfsSetUp();
 }
+
+document.getElementById("clock_solver").addEventListener('click',function () {
+    console.log("CLICK NA SOLVER");
+
+    document.getElementById("clock_solver").className = "grid_custom_clock_over";
+});

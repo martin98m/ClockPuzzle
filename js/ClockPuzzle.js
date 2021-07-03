@@ -74,13 +74,16 @@ rightHandle.style.visibility = "hidden";
 
 function gameSetUp() {
     clockArray.forEach(function (item, index) {
+        // console.log(item, index);
         let hourSpot = document.createElement("div");
 
         hourSpot.className = "hourSpot";
         let hourSpotCircle = document.createElement("div");
-        hourSpotCircle.className = "hour_circle";
+
+        hourSpotCircle.className = "hour_circle " + clockColor[item];
         hourSpotCircle.innerText = item.toString();
         hourSpotCircle.id = "ID0" + index;
+        hourSpotCircle.style.transform = `rotate(-${index * (360 / game.hourCount)}deg)`;
         hourSpot.appendChild(hourSpotCircle);
 
         hourSpot.style.transform = `rotate(${index * (360 / game.hourCount)}deg)`;
@@ -251,8 +254,8 @@ function dfs(graph, start, visit){
     if(visited.length === game.hourCount ){
         console.log("STOP");
         console.log(visited);
-        //return;
     }
+
     let nexG = [...graph[start]];
 
     visited.forEach(x => {
@@ -264,6 +267,11 @@ function dfs(graph, start, visit){
     nexG.forEach(x => {
         dfs(graph, x, visited);
     });
+}
 
-    //return visited;
+function goDFS() {
+    dfsSetUp();
+    clockArray.forEach(function (item, index) {
+      dfs(graph,index,[])
+    });
 }
