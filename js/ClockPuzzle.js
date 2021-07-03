@@ -17,7 +17,7 @@ function newGame(size){
     for (let a = 0; a < size; a++) clockArray[a]=0;
     // console.log(clockArray);
     game.hourCount = size;
-    game.clicks = 0;
+
     let newTest = Array.from(Array(size).keys());
     // console.log(newTest);
 
@@ -73,6 +73,8 @@ let rightHandle = document.getElementById("right_hand");
 
 
 function gameSetUp() {
+    game.clicks = 0;
+
     clockArray.forEach(function (item, index) {
         // console.log(item, index);
         let hourSpot = document.createElement("div");
