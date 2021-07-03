@@ -23,6 +23,19 @@ function startNewGame(){
     stopStopwatch();
     startStopwatch();
 }
+
+function restartGame(){
+    document.getElementById("left_hand").style.visibility = "hidden";
+    document.getElementById("right_hand").style.visibility = "hidden";
+
+    console.log("GAME RESTARTING");
+
+    gameSetUp()
+
+    stopStopwatch();
+    startStopwatch();
+}
+
 /*
 document.getElementById("clock_solver").addEventListener('click',function () {
     console.log("CLICK NA SOLVER");

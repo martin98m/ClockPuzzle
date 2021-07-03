@@ -61,7 +61,7 @@ function newGame(size){
         clockArray[x] = distance(x,target,size);
     }
     */
-    //console.log(clockArray);
+    // console.log(clockArray);
 
     gameSetUp();
 }
@@ -232,7 +232,7 @@ let graph = {};
 function dfsSetUp() {
 
     clockArray.forEach(function (item, index) {
-        // console.log( item, index);
+        console.log( item, index);
         let left = moveLeft(index, item, game.hourCount);
         let right = moveRight(index, item, game.hourCount);
         if (left === right) {
@@ -272,6 +272,7 @@ function dfs(graph, start, visit){
 function goDFS() {
     dfsSetUp();
     clockArray.forEach(function (item, index) {
+        console.log(item,index);
       dfs(graph,index,[])
     });
 }
