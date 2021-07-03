@@ -1,6 +1,6 @@
 console.log("ClockPuzzle.js loading...");
 
-const clockColor = ["red", "yellow", "blue", "green", "purple", "pink"];
+const clockColor = ["red", "yellow", "blue", "green", "purple", "pink", "brown", "beige", "orange", "maroon"];
 // let clockArray = [3, 3, 2, 4, 3, 1, 2, 3];
 let clockArray = [];
 
