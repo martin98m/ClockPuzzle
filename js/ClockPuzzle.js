@@ -1,6 +1,6 @@
 console.log("ClockPuzzle.js loading...");
 
-const clockColor = ["red", "yellow", "blue", "green", "purple", "pink", "brown", "beige", "orange", "maroon"];
+const clockColor = ["red", "yellow", "blue", "green", "purple", "pink", "brown", "beige", "orange", "maroon", "teal", "magenta"];
 // let clockArray = [3, 3, 2, 4, 3, 1, 2, 3];
 let clockArray = [];
 
@@ -80,7 +80,7 @@ function gameSetUp() {
         hourSpot.className = "hourSpot";
         let hourSpotCircle = document.createElement("div");
 
-        hourSpotCircle.className = "hour_circle " + clockColor[item];
+        hourSpotCircle.className = "hour_circle " + clockColor[item - 1];
         hourSpotCircle.innerText = item.toString();
         hourSpotCircle.id = "ID0" + index;
         hourSpotCircle.style.transform = `rotate(-${index * (360 / game.hourCount)}deg)`;

@@ -2,7 +2,7 @@
     background-color: lightcoral;
 }
 .yellow{
-    background-color: lightyellow;
+    background-color: yellow;
 }
 .blue{
     background-color: lightblue;
@@ -20,13 +20,19 @@
     background-color: sandybrown;
 }
 .beige{
-    background-color: beige;
+    background-color: greenyellow;
 }
 .orange{
     background-color: orange;
 }
 .maroon{
     background-color: maroon;
+}
+.teal{
+    background-color: teal;
+}
+.magenta{
+    background-color: magenta;
 }
 .locked{
     background-color: grey;
