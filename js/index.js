@@ -34,6 +34,12 @@ function restartGame(){
 
     console.log("GAME RESTARTING");
 
+    //DELETES all old hour spots which will be added back in gameSetUp()
+    let oldHours = document.getElementsByClassName("hourSpot");
+    while (oldHours[0]){
+        oldHours[0].parentNode.removeChild(oldHours[0]);
+    }
+
     gameSetUp()
 
     stopStopwatch();

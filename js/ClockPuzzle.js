@@ -120,6 +120,7 @@ function gameSetUp() {
                 return;
             }
 
+            console.log(hourSpot);
             hourSpot.clicked = true;
             hourSpot.element.style.opacity = "40%";
             game.clicks = game.clicks + 1;
@@ -131,7 +132,6 @@ function gameSetUp() {
                 rightHandle.style.visibility = "hidden";
                 return;
             }
-
 
             lockHourSpots();
 
